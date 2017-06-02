@@ -19,7 +19,12 @@
 var app = {
     // Application Constructor
     initialize: function() {
+        console.log("Galing sa dodo ng cow!");
         this.bindEvents();
+
+        var appElement = document.getElementById('app');
+
+        angular.bootstrap(appElement, ['app']);
     },
     // Bind Event Listeners
     //
@@ -40,3 +45,6 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
+
+// bootstrap angular
+app.initialize();

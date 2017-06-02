@@ -26,7 +26,7 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-    <meta http-equiv="Content-Security-Policy" content="default-src qa: gap://ready file://* *; script-src 'self' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">
+    <!--<meta http-equiv="Content-Security-Policy" content="default-src qa: gap://ready file://* *; script-src 'self' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *">-->
     <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
@@ -35,10 +35,15 @@
 	<link rel="stylesheet" href="./assets/app.css">
     <title>Hello World</title>
 </head>
-    <body ng-app="app" ng-cloak>
-        <app-component></app-component>
-        <script type="text/javascript" src="cordova.js"></script>    
-        <script src="dist/app.bundle.js"></script>
+    <body id="app" ng-cloak>
+        <app-component>
+            Loading...
+        </app-component>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="dist/polyfill.bundle.js"></script>
+        <script src="dist/app1.bundle.js"></script>
+        <!--<script src="dist/app2.bundle.js"></script>-->
         <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+        <!--<script src="js/index.js"></script>-->
     </body>
 </html>
