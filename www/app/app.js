@@ -1,9 +1,9 @@
 'use strict';
 
 import angular from 'angular';
-//import { downgradeComponent } from '@angular/upgrade/static';
+import { downgradeComponent } from '@angular/upgrade/static';
 
-//import { UpgradeComponent } from '../app2/app.component';
+import { Ng2Component } from '../app2/app.component';
 
 angular.module('app', [])
     .component('appComponent', {
@@ -11,8 +11,12 @@ angular.module('app', [])
         controller: function AppComponentController($scope, $element, $attrs) {
             
         }
-    });/*.directive('ng2Component', 
+    }).directive('appDirective', function(){
+        return {
+            template: '<div>AngularJS Directive on the loose!</div>'
+        }
+    }).directive('ng2Component', 
         downgradeComponent({
-            component: UpgradeComponent
+            component: Ng2Component
         }) as angular.IDirectiveFactory
-    );*/
+    );
