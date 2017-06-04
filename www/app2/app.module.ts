@@ -1,10 +1,12 @@
 //declare var angular: angular.IAngularStatic;
 //import  from 'angular';
-import { NgModule, platformRef} from '@angular/core';
+//import { NgModule, platformRef} from '@angular/core';
+import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
 import { Ng2Component } from './app.component';
+import { AppService } from './app.service';
 
 @NgModule({
     imports: [
@@ -17,12 +19,14 @@ import { Ng2Component } from './app.component';
     entryComponents: [
         Ng2Component
     ],
-    bootstrap: [Ng2Component]
+    bootstrap: [Ng2Component],
+    providers: [AppService]
 })
 
 export class AppModule {
-    //constructor(private pf: platformRef){}
     constructor(){}
+    //constructor(private pf: platformRef){}
+    //constructor(){}
     /*ngDoBootstrap(){
         //const upgrade = pf.injector.get(UpgradeModule) as UpgradeModule;
         //var appElement = document.getElementById('app');

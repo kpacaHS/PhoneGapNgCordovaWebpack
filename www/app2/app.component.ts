@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AppService } from './app.service';
 
 @Component({
     selector: 'ng2-component',
@@ -8,4 +9,8 @@ import { Component } from '@angular/core';
     `
 })
 
-export class Ng2Component{}
+export class Ng2Component{
+    constructor(private service: AppService){
+        this.service.getHelloWorld();
+    }
+}
