@@ -22,7 +22,7 @@
 <html>
 
 <head>
-    <base href="/">
+    <base href="./">
     <meta charset="utf-8" />
     <meta name="format-detection" content="telephone=no" />
     <meta name="msapplication-tap-highlight" content="no" />
@@ -32,18 +32,19 @@
     
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" >
-	<link rel="stylesheet" href="./assets/angular-material.css">
-	<link rel="stylesheet" href="./assets/app.css">
+	<link rel="stylesheet" href="assets/angular-material.css">
+	<link rel="stylesheet" href="assets/app.css">
     <script src="lib/angular.min.js"></script>
     <title>Hello World</title>
 </head>
     <!--<body id="app" ng-cloak>-->
     <body id="app">
-        <app-component>
+        <test-component>
             Loading...
-        </app-component>
-        <app-directive></app-directive>
-        <test-component></test-component>
+        </test-component>
+        <app-directive>
+        </app-directive>
+        <hero-detail></hero-detail>
         <!--<ng2-component></ng2-component>-->
         <script type="text/javascript" src="cordova.js"></script>
         <script src="dist/polyfill.bundle.js"></script>

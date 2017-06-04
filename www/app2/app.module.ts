@@ -1,11 +1,11 @@
-//declare var angular: angular.IAngularStatic;
+declare var angular: angular.IAngularStatic;
 //import angular from 'angular';
 //import { NgModule, platformRef} from '@angular/core';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { UpgradeModule, downgradeComponent } from '@angular/upgrade/static';
 
-import { Ng2Component } from './app.component';
+import { HeroDetailComponent } from './app.component';
 import { AppService } from './app.service';
 
 @NgModule({
@@ -14,10 +14,10 @@ import { AppService } from './app.service';
         UpgradeModule
     ],
     declarations: [
-        Ng2Component
+        HeroDetailComponent
     ],
     entryComponents: [
-        Ng2Component
+        HeroDetailComponent
     ],
     //bootstrap: [Ng2Component],
     //providers: [AppService]
@@ -36,8 +36,8 @@ export class AppModule {
 //angular = ng1;
 
 angular.module('app', [])
-    .component('appComponent', {
-        template: `<div> AngularJS </div>`,
+    .component('testComponent', {
+        template: `<div> AngularJS Component</div>`,
         controller: function AppComponentController($scope, $element, $attrs) {
             
         }
@@ -45,11 +45,11 @@ angular.module('app', [])
         return {
             template: '<div>AngularJS Directive on the loose!</div>'
         }
-    });/*.directive('testComponent', 
+    }).directive('heroDetail', 
         downgradeComponent({
-            component: Ng2Component
+            component: HeroDetailComponent
         }) as angular.IDirectiveFactory
-    );*/
+    );
 
 
  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
