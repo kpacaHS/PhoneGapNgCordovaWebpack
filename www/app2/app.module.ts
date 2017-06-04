@@ -1,5 +1,5 @@
 //declare var angular: angular.IAngularStatic;
-//import  from 'angular';
+//import angular from 'angular';
 //import { NgModule, platformRef} from '@angular/core';
 import { NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -19,24 +19,23 @@ import { AppService } from './app.service';
     entryComponents: [
         Ng2Component
     ],
-    bootstrap: [Ng2Component],
-    providers: [AppService]
+    //bootstrap: [Ng2Component],
+    //providers: [AppService]
 })
 
 export class AppModule {
-    constructor(){}
+    constructor(private upgrade: UpgradeModule){}
     //constructor(private pf: platformRef){}
     //constructor(){}
-    /*ngDoBootstrap(){
-        //const upgrade = pf.injector.get(UpgradeModule) as UpgradeModule;
-        //var appElement = document.getElementById('app');
-        //this.upgrade.bootstrap(appElement, ['app'], {strictDi: true});
-    }*/
+    ngDoBootstrap(){
+        var appElement = document.getElementById('app');
+        this.upgrade.bootstrap(appElement, ['app']);
+    }
 }
 
 //angular = ng1;
 
-/*angular.module('app', [])
+angular.module('app', [])
     .component('appComponent', {
         template: `<div> AngularJS </div>`,
         controller: function AppComponentController($scope, $element, $attrs) {
@@ -46,7 +45,7 @@ export class AppModule {
         return {
             template: '<div>AngularJS Directive on the loose!</div>'
         }
-    });/*.directive('ng2Component', 
+    });/*.directive('testComponent', 
         downgradeComponent({
             component: Ng2Component
         }) as angular.IDirectiveFactory
@@ -55,4 +54,9 @@ export class AppModule {
 
  import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
+ /*platformBrowserDynamic().bootstrapModule(AppModule).then(platformRef => {
+     const upgrade = platformRef.injector.get(UpgradeModule) as UpgradeModule;
+     var appElement = document.getElementById('app');
+     upgrade.bootstrap(appElement, ['app']);
+ });*/
  platformBrowserDynamic().bootstrapModule(AppModule);
